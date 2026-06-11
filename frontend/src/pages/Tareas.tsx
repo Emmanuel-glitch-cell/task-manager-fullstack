@@ -173,11 +173,10 @@ export default function Tareas() {
                     {error}
                 </div>
             ) : (
-                tareas !== null ? (
+                tareas !== null && tareas.length === 0 ? (
                     tareasFiltradas?.length === 0 ? (
                         <div className="max-w-md mx-auto p-3 text-gray-300 text-center mt-4">
-                            <p className="text-lg font-semibold">No hay tareas agregadas aún.</p>
-                            <p className="text-sm text-gray-400">Si deseas agregar una nueva tarea, pon sus datos en el formulario.</p>
+                            <p className="text-lg font-semibold">No hay tareas que coincidan con la busqueda.</p>
                         </div>
                     ) : (
                         <ul className="max-w-md mx-auto mt-4 space-y-2">
@@ -201,7 +200,10 @@ export default function Tareas() {
                         </ul>
                     )
                 ) : (
-                    <p className="text-center text-gray-400 mt-4">Cargando tareas...</p>
+                    <div>
+                        <p className="text-lg font-semibold">No hay tareas agregadas aún.</p>
+                        <p className="text-sm text-gray-400">Si deseas agregar una nueva tarea, pon sus datos en el formulario.</p>
+                    </div>
                 )
 )}
         </div>
