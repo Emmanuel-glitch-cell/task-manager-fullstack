@@ -176,7 +176,7 @@ export default function Tareas() {
                 tareas !== null ? (
                     tareasFiltradas?.length === 0 ? (
                         <div className="max-w-md mx-auto p-3 text-gray-300 text-center mt-4">
-                            <p className="text-lg font-semibold">No hay tareas agregadas aún.</p>
+                            <p className="text-lg font-semibold text-center">No hay tareas agregadas aún.</p>
                             <p className="text-sm text-gray-400">Si deseas agregar una nueva tarea, pon sus datos en el formulario.</p>
                         </div>
                     ) : (
