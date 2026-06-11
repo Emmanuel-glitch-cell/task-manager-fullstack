@@ -36,3 +36,5 @@ export async function fetchInteligente(url: string, opciones: RequestInit = {}) 
     }
     return response;
 }
+
+export const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000";

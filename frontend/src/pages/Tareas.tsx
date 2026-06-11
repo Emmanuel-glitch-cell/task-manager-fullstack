@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { manejoChange } from "../customs/manejoChange";
 import { fetchInteligente } from "../services/api";
+import { API_URL } from "../services/api";
 interface DatosTarea {
     id: number;
     nombre: string;
@@ -33,7 +34,7 @@ export default function Tareas() {
         
         const datosEnviar = { nombre, prioridad, estado };
         try {
-            const peticion = await fetchInteligente("http://localhost:3000/api/agregar-tarea", {
+            const peticion = await fetchInteligente(`${API_URL}/api/agregar-tarea`, {
                 method: 'POST',
                 body: JSON.stringify(datosEnviar),
             });
@@ -54,7 +55,7 @@ export default function Tareas() {
     }
 
     useEffect(() => {
-            fetchInteligente("http://localhost:3000/api/tareas")
+            fetchInteligente(`${API_URL}/api/tareas`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error("Error al obtener las tareas de la base de datos.");
@@ -70,7 +71,7 @@ export default function Tareas() {
 
     const eliminarTarea = async (id: number) => {
         try {
-            const response = await fetchInteligente(`http://localhost:3000/api/eliminar-tarea/${id}`, {
+            const response = await fetchInteligente(`${API_URL}/api/eliminar-tarea/${id}`, {
                 method: 'DELETE'
             });
 
@@ -102,7 +103,7 @@ export default function Tareas() {
     const renderizarTareaActualizada = async (idActualizar: number) => {
         const datosEnviar: { nombre: string; estado: string; prioridad: string; } = { nombre, estado, prioridad };
         try {
-            const response = await fetchInteligente(`http://localhost:3000/api/actualizar-tarea/${idActualizar}`, {
+            const response = await fetchInteligente(`${API_URL}/api/actualizar-tarea/${idActualizar}`, {
                 method: 'PUT',
                 body: JSON.stringify(datosEnviar)
             });

@@ -1,5 +1,6 @@
 import { fetchInteligente } from "../services/api";
 import { useNavigate } from "react-router-dom";
+import { API_URL } from "../services/api";
 
 export default function VentanaEliminacionCuenta(){
     const idUsuario = localStorage.getItem("id");
@@ -7,7 +8,7 @@ export default function VentanaEliminacionCuenta(){
 
     const eliminarCuenta = async () => {
         try {
-            const response = await fetchInteligente(`http://localhost:3000/api/auth/eliminar-cuenta/${idUsuario}`, {
+            const response = await fetchInteligente(`${API_URL}/api/auth/eliminar-cuenta/${idUsuario}`, {
                 method: 'DELETE'
             });
             const data = await response.json();

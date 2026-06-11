@@ -2,6 +2,7 @@ import { useState } from "react";
 import { manejoChange } from "../customs/manejoChange";
 import Button from "../components/Button";
 import { useNavigate, Link } from "react-router-dom";
+import { API_URL } from "../services/api";
 export default function FormLogin() {
     // variables que usare para guardar los datos del usuario
     const [email, setEmail] = useState<string>("");
@@ -27,7 +28,7 @@ export default function FormLogin() {
         // Manejo la peticion fetch
         try {
             // Realizo la peticion y sus configuraciones basicas
-            const response = await fetch("http://localhost:3000/api/auth/login", {
+            const response = await fetch(`${API_URL}/api/auth/login`, {
                 method: 'POST',
                 headers: {'Content-Type':'application/json'},
                 body: JSON.stringify(datosEnviar),

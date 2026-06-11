@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { manejoChange } from "../customs/manejoChange";
 import Button from "../components/Button";
 import { useNavigate, Link } from "react-router-dom";
+import { API_URL } from "../services/api";
 export default function FormRegister() {
     const [nombre, setNombre] = useState<string>("");
     const [email, setEmail] = useState<string>("");
@@ -21,7 +22,7 @@ export default function FormRegister() {
         };
 
         try {
-            const response = await fetch("http://localhost:3000/api/auth/register", {
+            const response = await fetch(`${API_URL}/api/auth/register`, {
                 method: 'POST',
                 headers: {'Content-Type':'application/json'},
                 body: JSON.stringify(datosEnviar),
