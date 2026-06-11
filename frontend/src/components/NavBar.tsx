@@ -1,32 +1,28 @@
 import { Link, useNavigate } from "react-router-dom";
-import { API_URL } from "../services/api";
+import { API_URL, fetchInteligente } from "../services/api";
 
 export default function NavBar() {
     const navigate = useNavigate();
     const cerrarSesion = async () => {
         try {
-            const token = localStorage.getItem("token");
-            const response = await fetch(`${API_URL}/api/auth/logout`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type':'application/json',
-                    'Authorization': `Bearer ${token}`
-                },
-                credentials: 'include'
+            const response = await fetchInteligente(`${API_URL}/api/auth/logout`, {
+                method: 'POST'
             });
+            
             const data = await response.json();
             if (!response.ok) {
-                throw new Error (data.error || "Hubo un error al querer cerrar sesion.");
+                throw new Error(data.error || "Hubo un error al querer cerrar sesion.");
             }
 
             navigate("/", { replace: true });
-        } catch(error){
-            console.log("Error: ",error);
+        } catch(error) {
+            console.log("Error: ", error);
         } finally {
             localStorage.removeItem("token");
             localStorage.removeItem("usuarios");
         }
     }
+
 
     return (
         <nav className="w-full bg-slate-800 border-b border-slate-700/60 px-6 py-4 flex justify-between items-center shadow-lg">
