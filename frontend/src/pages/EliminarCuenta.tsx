@@ -24,7 +24,7 @@ export default function VentanaEliminacionCuenta(){
         }
     }
 
-    const volverASeccionTareas = () => window.location.href = "tareas";
+    const volverASeccionTareas = () => navigate("/tareas");
 
     return (
         <div className="bg-slate-900 min-h-screen w-full text-white flex justify-center items-center p-4">
