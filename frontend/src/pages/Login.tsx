@@ -48,7 +48,7 @@ export default function FormLogin() {
             setError(null);
             setEmail("");
             setPassword("");
-            navigate("/layout");
+            navigate("/");
         // De no hacerlo, salta al catch
         } catch(error) {
             console.log("Error:" , error);

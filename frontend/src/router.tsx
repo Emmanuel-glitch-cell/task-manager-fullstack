@@ -21,7 +21,7 @@ export const miMapa = createBrowserRouter([
         element: <FormRegister />
     },
     {
-        path: "/layout",
+        path: "/",
         element: <Layout />,
         children: [
             {
