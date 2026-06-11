@@ -1,11 +1,12 @@
 import { Link, useNavigate } from "react-router-dom";
+import { API_URL } from "../services/api";
 
 export default function NavBar() {
     const navigate = useNavigate();
     const cerrarSesion = async () => {
         try {
             const token = localStorage.getItem("token");
-            const response = await fetch("http://localhost:3000/api/auth/logout", {
+            const response = await fetch(`${API_URL}/api/auth/logout`, {
                 method: 'POST',
                 headers: {
                     'Content-Type':'application/json',

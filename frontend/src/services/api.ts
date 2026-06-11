@@ -1,3 +1,4 @@
+export const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000";
 export async function fetchInteligente(url: string, opciones: RequestInit = {}) {
     opciones.credentials = 'include';
     const tokenActual = localStorage.getItem("token");
@@ -10,7 +11,7 @@ export async function fetchInteligente(url: string, opciones: RequestInit = {}) 
     let response = await fetch(url, opciones);
     if (response.status === 401 || response.status === 403) {
         console.log("Token caducado");
-        const responseRefresh = await fetch("http://localhost:3000/api/auth/refresh-token", {
+        const responseRefresh = await fetch(`${API_URL}/api/auth/refresh-token`, {
             method: 'POST',
             credentials: 'include'
         });
@@ -36,5 +37,3 @@ export async function fetchInteligente(url: string, opciones: RequestInit = {}) 
     }
     return response;
 }
-
-export const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000";
