@@ -38,21 +38,21 @@ export default function NavBar() {
             {/* Tus dos únicos enlaces de interacción a la derecha */}
             <div className="flex items-center gap-6">
                 <Link 
-                    to=""
+                    to="/layout"
                     className="text-sm font-medium text-slate-200 hover:text-blue-400 transition-colors duration-200"
                 >
                     Inicio
                 </Link>
 
                 <Link 
-                    to="tareas" 
+                    to="/layout/tareas" 
                     className="text-sm font-medium text-slate-200 hover:text-blue-400 transition-colors duration-200"
                 >
                     Sección Tareas
                 </Link>
 
                 <Link 
-                    to="eliminar-cuenta"
+                    to="/layout/eliminar-cuenta"
                     className="text-sm font-medium text-red-400 hover:bg-red-500/10 border border-red-500/20 px-3 py-1.5 rounded transition-all duration-200"
                 >
                     Eliminar cuenta
