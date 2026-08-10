@@ -9,7 +9,17 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors({ origin: process.env.FRONTEND_URL || 'http://localhost:5173', credentials: true }));
+app.use(cors({ 
+    origin: (origin, callback) => {
+        if (!origin || origin.includes('.vercel.app') || origin.includes('localhost')) {
+            callback(null, true);
+        } else {
+            callback(new Error('Bloqueado por políticas de CORS'));
+        }
+    }, 
+    credentials: true 
+}));
+
 app.use('/api/auth', rutasLogin);
 app.use('/', rutas);
 app.listen(PORT, () => console.log(chalk.grey(`Servidor corriendo en http://localhost:${PORT}`)));
