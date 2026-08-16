@@ -1,0 +1,67 @@
+============================================================
+       GUIA DE REFERENCIA ULTRA-RAPIDA: TAILWIND CSS
+============================================================
+
+1. DISENO DE CAJA (LAYOUT) Y CONTENEDORES
+------------------------------------------------------------
+* Contenedor: container (centra usando tambien mx-auto)
+* Mostrar: block, inline-block, inline, flex, grid, hidden
+* Posicionamiento: static, relative, absolute, fixed, sticky
+* Coordenadas: top-0, right-2, bottom-4, left-auto
+* Z-Index: z-0, z-10, z-20, z-30, z-40, z-50, z-auto
+* Desbordamiento: overflow-auto, overflow-hidden, overflow-scroll
+
+2. ESPACIADOS, TAMANOS Y BORDES
+------------------------------------------------------------
+* Margen: m-4, mx-auto, my-2, mt-4, mr-2, mb-4, ml-2
+* Padding: p-2, px-4, py-6, pt-2, pr-4, pb-6, pl-2
+* Ancho: w-full, w-screen, w-1/2, w-auto, min-w-0, max-w-7xl
+* Alto: h-full, h-screen, h-auto, min-h-screen, max-h-96
+* Grosor de Borde: border-0, border, border-2, border-4, border-8
+* Redondeado: rounded-none, rounded-sm, rounded, rounded-md, rounded-lg, rounded-full
+* Estilo de Borde: border-solid, border-dashed, border-dotted
+
+3. TIPOGRAFIA Y TEXTO
+------------------------------------------------------------
+* Tamano: text-xs, text-sm, text-base, text-lg, text-xl, text-2xl, text-4xl
+* Grosor: font-thin, font-light, font-normal, font-medium, font-semibold, font-bold
+* Alineacion: text-left, text-center, text-right, text-justify
+* Transformacion: uppercase, lowercase, capitalize, normal-case
+* Interlineado: leading-none, leading-tight, leading-normal, leading-loose
+* Truncado: truncate, text-ellipsis
+
+4. COLORES (Reemplaza {color} por: slate, red, amber, emerald, blue, indigo, zinc)
+------------------------------------------------------------
+* Fondo: bg-white, bg-black, bg-transparent, bg-{color}-500
+* Texto: text-white, text-black, text-{color}-700
+* Borde: border-slate-300, border-{color}-500
+* Opacidad: bg-opacity-50, text-opacity-80
+
+5. FLEXBOX Y GRID
+------------------------------------------------------------
+* Contenedor Flex: flex, inline-flex
+* Direccion Flex: flex-row, flex-col
+* Envoltura Flex: flex-wrap, flex-nowrap
+* Contenedor Grid: grid
+* Columnas Grid: grid-cols-1, grid-cols-2, grid-cols-3, grid-cols-4, grid-cols-12
+* Alineacion Principal: justify-start, justify-end, justify-center, justify-between
+* Alineacion Secundaria: items-start, items-end, items-center, items-stretch
+* Espaciado Interno: gap-1, gap-2, gap-4, gap-8, gap-x-4, gap-y-2
+* Crecimiento: flex-1, grow, shrink-0
+
+6. ESTADOS E INTERACTIVIDAD
+------------------------------------------------------------
+* Pseudocases: hover:, focus:, active:, disabled:
+* Sombras: shadow-sm, shadow, shadow-md, shadow-lg, shadow-xl, shadow-none
+* Opacidad: opacity-0, opacity-50, opacity-100
+* Transiciones: transition-all, transition-colors, duration-300, ease-in-out
+* Cursor: cursor-pointer, cursor-not-allowed, cursor-default
+
+7. DISENO RESPONSIVO (Prefijos para pantallas)
+------------------------------------------------------------
+* sm: (Moviles grandes >= 640px)
+* md: (Tablets >= 768px)
+* lg: (Laptops >= 1024px)
+* xl: (Pantallas grandes >= 1280px)
+
+============================================================
